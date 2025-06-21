@@ -1,8 +1,8 @@
 package services;
 
-import enums.VehicleTypes;
 import models.ParkingLotFloorSlot;
+import models.Vehicle;
 
 public interface IParkService {
-    ParkingLotFloorSlot park(String vehicleNumber, VehicleTypes vehicleType);
+    ParkingLotFloorSlot parkVehicle(Vehicle vehicle);
 }

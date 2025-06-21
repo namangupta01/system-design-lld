@@ -5,14 +5,16 @@ import enums.VehicleTypes;
 
 public class ParkingLotFloorSlot {
     private final Integer slotNumber;
-    private VehicleTypes vehicleTypes;
+    private final VehicleTypes vehicleTypes;
+    private final ParkingLotFloor floor;
     private SlotStatus status;
     private Vehicle vehicle;
 
-    public ParkingLotFloorSlot(Integer slotNumber, VehicleTypes vehicleType) {
+    public ParkingLotFloorSlot(Integer slotNumber, VehicleTypes vehicleType, ParkingLotFloor floor) {
         this.slotNumber = slotNumber;
         this.vehicleTypes = vehicleType;
         this.status = SlotStatus.UN_OCCUPIED;
+        this.floor = floor;
     }
 
     public Integer getSlotNumber() {
@@ -23,19 +25,23 @@ public class ParkingLotFloorSlot {
         return status;
     }
 
+    public void setStatus(SlotStatus status) {
+        this.status = status;
+    }
+
     public Vehicle getVehicle() {
         return this.vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public VehicleTypes getVehicleTypes() {
         return vehicleTypes;
     }
 
-    public void setStatus(SlotStatus status) {
-        this.status = status;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public ParkingLotFloor getFloor() {
+        return floor;
     }
 }

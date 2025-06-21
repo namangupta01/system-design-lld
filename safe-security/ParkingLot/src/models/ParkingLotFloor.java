@@ -1,21 +1,23 @@
 package models;
 
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ParkingLotFloor {
     private final Integer floorNumber;
-    private List<ParkingLotFloorSlot> parkingLotFloorSlotList;
+    private final List<ParkingLotFloorSlot> parkingLotFloorSlotList;
 
     public ParkingLotFloor(Integer floorNumber) {
         this.floorNumber = floorNumber;
+        this.parkingLotFloorSlotList = new CopyOnWriteArrayList<>();
     }
 
     public List<ParkingLotFloorSlot> getParkingLotFloorSlotList() {
         return parkingLotFloorSlotList;
     }
 
-    public void setParkingLotFloorSlotList(List<ParkingLotFloorSlot> parkingLotFloorSlotList) {
-        this.parkingLotFloorSlotList = parkingLotFloorSlotList;
+    public void addSlot(ParkingLotFloorSlot slot) {
+        this.parkingLotFloorSlotList.add(slot);
     }
 
     public Integer getFloorNumber() {
